@@ -10,9 +10,9 @@
   },
   {
   "name": "ha-proxy",
-  "port": 8433,
+  "port": 8081,
   "check": {
-        "http": "http://localhost:8443",
+        "http": "http://localhost:8081",
         "interval": "5s"
     }
   }
