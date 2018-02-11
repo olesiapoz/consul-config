@@ -9,4 +9,4 @@ defaults
 	
 listen http-in
 	bind *:80{{range service "web"}}
-	server {{.node}} {{.Address}}:{{.Port}}{{end}}
+	server {{.Node}} {{.Address}}:{{.Port}}{{end}}
