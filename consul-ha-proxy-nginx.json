@@ -1,0 +1,20 @@
+{
+"services": [
+{
+  "name": "web",
+  "port": 8080,
+  "check": {
+        "http": "http://localhost:8080",
+        "interval": "5s"
+    }
+  },
+  {
+  "name": "ha-proxy",
+  "port": 8433,
+  "check": {
+        "http": "http://localhost:8443",
+        "interval": "5s"
+    }
+  }
+  ]
+}
