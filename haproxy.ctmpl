@@ -1,12 +1,16 @@
 global
 	maxconn 4096
-	
+
 defaults
 	mode http
 	timeout connect 5s
 	timeout client 50s
 	timeout server 50s
-	
+
 listen http-in
 	bind *:80{{range service "web"}}
 	server {{.Node}} {{.Address}}:{{.Port}}{{end}}
+
+	stats {{key "PROD/HAPROXY/stats/status"}}
+	stats uri {{key "PROD/HAPROXY/stats/uri"}}
+	stats refresh {{key "PROD/HAPROXY/stats/refresh"}}
